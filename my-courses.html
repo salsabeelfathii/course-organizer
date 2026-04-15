@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Courses — CourseVault</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <a href="../index.html" class="logo">
+          <span class="logo-text">Course<span>Vault</span></span>
+        </a>
+        <nav>
+          <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+          </button>
+          <ul id="nav-menu">
+            <li><a href="../index.html">🏠 Home</a></li>
+            <li><a href="my-courses.html" class="active">📚 My Courses</a></li>
+            <li><a href="add-course.html" class="cta">➕ Add Course</a></li>
+            <li><a href="contact.html">✉️ Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="page-hero">
+        <span class="eyebrow fade-up">Spring 2025</span>
+        <h1 class="fade-up delay-1">My <em>Courses</em></h1>
+        <p class="fade-up delay-2">
+          7 courses enrolled · 21 credit hours · Semester in progress
+        </p>
+      </div>
+
+      <section>
+        <div class="stats-grid" style="margin-bottom: 2.5rem">
+          <div class="stat-card">
+            <span class="stat-icon">📗</span>
+            <div class="stat-number">4</div>
+            <div class="stat-label">Active</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">✅</span>
+            <div class="stat-number">2</div>
+            <div class="stat-label">Completed</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">⏳</span>
+            <div class="stat-number">1</div>
+            <div class="stat-label">Pending</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">⚡</span>
+            <div class="stat-number">21</div>
+            <div class="stat-label">Total Credits</div>
+          </div>
+        </div>
+
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+          "
+        >
+          <div>
+            <h2 class="section-title">Enrolled Courses</h2>
+            <p class="section-subtitle">Click any row to expand course notes</p>
+          </div>
+          <a
+            href="add-course.html"
+            class="btn btn-primary"
+            style="height: fit-content"
+            >➕ Add Course</a
+          >
+        </div>
+
+        <div class="filter-bar">
+          <input
+            type="text"
+            class="search-input"
+            id="searchInput"
+            placeholder="🔍 Search courses, instructors…"
+          />
+          <select class="filter-select" id="filterStatus">
+            <option value="">All Statuses</option>
+            <option value="Active">Active</option>
+            <option value="Completed">Completed</option>
+            <option value="Pending">Pending</option>
+            <option value="Dropped">Dropped</option>
+          </select>
+          <select class="filter-select" id="filterDept">
+            <option value="">All Departments</option>
+            <option value="CS">Computer Science</option>
+            <option value="MATH">Mathematics</option>
+            <option value="ENG">Engineering</option>
+            <option value="PHYS">Physics</option>
+            <option value="LIT">Literature</option>
+          </select>
+        </div>
+
+        <div class="table-wrapper fade-up delay-2">
+          <table id="coursesTable">
+            <thead>
+              <tr>
+                <th>Course Name</th>
+                <th>Code</th>
+                <th>Instructor</th>
+                <th>Department</th>
+                <th>Credits</th>
+                <th>Schedule</th>
+                <th>Grade</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <tr
+                data-notes="Core algorithms course. Midterm on March 15. Focus chapters 4–9. Office hours: Mon 2–4PM."
+              >
+                <td>Data Structures & Algorithms</td>
+                <td style="color: var(--text-muted); font-size: 0.85rem">
+                  CS-301
+                </td>
+                <td>Dr. Sarah Mitchell</td>
+                <td>CS</td>
+                <td><span class="credit-chip">3 cr</span></td>
+                <td style="font-size: 0.85rem; color: var(--text-muted)">
+                  MWF 9–10am
+                </td>
+                <td style="color: var(--accent); font-weight: 600">A</td>
+                <td><span class="badge badge-active">Active</span></td>
+              </tr>
+              <tr
+                data-notes="Heavy proof-based course. Weekly problem sets due Fridays. Study group meets Thursdays 6PM in Library Rm 204."
+              >
+                <td>Linear Algebra</td>
+                <td style="color: var(--text-muted); font-size: 0.85rem">
+                  MATH-221
+                </td>
+                <td>Prof. James Okafor</td>
+                <td>MATH</td>
+                <td><span class="credit-chip">3 cr</span></td>
+                <td style="font-size: 0.85rem; color: var(--text-muted)">
+                  TTh 10:30–12pm
+                </td>
+                <td style="color: var(--accent); font-weight: 600">B+</td>
+                <td><span class="badge badge-active">Active</span></td>
+              </tr>
+              <tr
+                data-notes="Lab included (Fridays 1–4PM). Semester project: design a simple circuit. Partner: Yousef Al-Rashidi."
+              >
+                <td>Digital Circuit Design</td>
+                <td style="color: var(--text-muted); font-size: 0.85rem">
+                  ENG-215
+                </td>
+                <td>Dr. Priya Nair</td>
+                <td>ENG</td>
+                <td><span class="credit-chip">4 cr</span></td>
+                <td style="font-size: 0.85rem; color: var(--text-muted)">
+                  MWF 11am + Lab
+                </td>
+                <td style="color: var(--accent); font-weight: 600">A−</td>
+                <td><span class="badge badge-active">Active</span></td>
+              </tr>
+              <tr
+                data-notes="Calculus-based. Focus on Newtonian mechanics first half, electromagnetism second. Lab report due bi-weekly."
+              >
+                <td>Physics II: Electromagnetism</td>
+                <td style="color: var(--text-muted); font-size: 0.85rem">
+                  PHYS-202
+                </td>
+                <td>Prof. Lena Strauss</td>
+                <td>PHYS</td>
+                <td><span class="credit-chip">4 cr</span></td>
+                <td style="font-size: 0.85rem; color: var(--text-muted)">
+                  TTh 2–3:30pm
+                </td>
+                <td style="color: var(--accent); font-weight: 600">B</td>
+                <td><span class="badge badge-active">Active</span></td>
+              </tr>
+              <tr
+                data-notes="Covers 19th-century British and American literature. Two essays required. Final paper topic approved Feb 20."
+              >
+                <td>Victorian & Modern Literature</td>
+                <td style="color: var(--text-muted); font-size: 0.85rem">
+                  LIT-318
+                </td>
+                <td>Dr. Emily Hartwell</td>
+                <td>LIT</td>
+                <td><span class="credit-chip">3 cr</span></td>
+                <td style="font-size: 0.85rem; color: var(--text-muted)">
+                  MWF 1–2pm
+                </td>
+                <td style="color: #2ecc71; font-weight: 600">A</td>
+                <td><span class="badge badge-done">Completed</span></td>
+              </tr>
+              <tr
+                data-notes="Introduction to proof writing and discrete math. Completed with distinction. Great foundation for CS-301."
+              >
+                <td>Discrete Mathematics</td>
+                <td style="color: var(--text-muted); font-size: 0.85rem">
+                  MATH-150
+                </td>
+                <td>Prof. Omar Hassan</td>
+                <td>MATH</td>
+                <td><span class="credit-chip">3 cr</span></td>
+                <td style="font-size: 0.85rem; color: var(--text-muted)">
+                  TTh 8–9:30am
+                </td>
+                <td style="color: #2ecc71; font-weight: 600">A+</td>
+                <td><span class="badge badge-done">Completed</span></td>
+              </tr>
+              <tr
+                data-notes="Waitlisted — awaiting department approval. Prerequisite: CS-201 (satisfied). Hoping to enroll by week 3."
+              >
+                <td>Machine Learning Fundamentals</td>
+                <td style="color: var(--text-muted); font-size: 0.85rem">
+                  CS-412
+                </td>
+                <td>Dr. Angela Torres</td>
+                <td>CS</td>
+                <td><span class="credit-chip">3 cr</span></td>
+                <td style="font-size: 0.85rem; color: var(--text-muted)">
+                  MWF 3–4pm
+                </td>
+                <td style="color: var(--text-muted); font-weight: 600">—</td>
+                <td><span class="badge badge-pending">Pending</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p
+          id="noResults"
+          style="
+            display: none;
+            text-align: center;
+            color: var(--text-muted);
+            padding: 3rem;
+          "
+        >
+          No courses match your filter.
+        </p>
+
+        <div
+          id="notesDrawer"
+          style="
+            display: none;
+            background: var(--bg-card);
+            border: 1px solid var(--accent);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            margin-top: 1rem;
+            transition: all var(--transition);
+          "
+        >
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 0.75rem;
+            "
+          >
+            <span
+              style="
+                font-size: 0.78rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                color: var(--accent);
+              "
+              >📝 Course Notes</span
+            >
+            <button
+              style="
+                background: none;
+                border: none;
+                color: var(--text-muted);
+                cursor: pointer;
+                font-size: 1.2rem;
+              "
+            >
+              ×
+            </button>
+          </div>
+          <p
+            id="notesText"
+            style="color: var(--text-secondary); font-size: 0.92rem"
+          ></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="../index.html" class="logo" style="margin-bottom: 0.8rem">
+              <span class="logo-text">Course<span>Vault</span></span>
+            </a>
+            <p>
+              A personal academic organizer designed to help students stay on
+              top of their coursework and academic goals.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Pages</h4>
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="my-courses.html">My Courses</a></li>
+              <li><a href="add-course.html">Add Course</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

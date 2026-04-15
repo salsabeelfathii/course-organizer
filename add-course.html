@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Course — CourseVault</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <a href="../index.html" class="logo">
+          <span class="logo-text">Course<span>Vault</span></span>
+        </a>
+        <nav>
+          <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+          </button>
+          <ul id="nav-menu">
+            <li><a href="../index.html">🏠 Home</a></li>
+            <li><a href="my-courses.html">📚 My Courses</a></li>
+            <li>
+              <a href="add-course.html" class="active cta">➕ Add Course</a>
+            </li>
+            <li><a href="contact.html">✉️ Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="page-hero">
+        <span class="eyebrow fade-up">New Enrollment</span>
+        <h1 class="fade-up delay-1">Add a <em>Course</em></h1>
+        <p class="fade-up delay-2">
+          Fill in the details below to add a new course to your personal
+          academic record.
+        </p>
+      </div>
+
+      <section>
+        <div class="form-container fade-up delay-2">
+          <div class="form-card">
+            <div
+              style="
+                margin-bottom: 2rem;
+                padding-bottom: 1.5rem;
+                border-bottom: 1px solid var(--border);
+              "
+            >
+              <h2 class="section-title" style="margin-bottom: 0.3rem">
+                Course Details
+              </h2>
+              <p style="color: var(--text-muted); font-size: 0.88rem">
+                Fields marked with
+                <span style="color: var(--accent)">*</span> are required
+              </p>
+            </div>
+
+            <form id="addCourseForm" novalidate>
+              <div class="form-grid">
+                <div class="form-group full">
+                  <label for="courseName"
+                    >Course Name <span class="required-mark">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="courseName"
+                    name="courseName"
+                    placeholder="e.g. Introduction to Computer Science"
+                    required
+                  />
+
+                  <span
+                    class="field-error"
+                    style="
+                      display: none;
+                      color: var(--danger);
+                      font-size: 0.8rem;
+                      margin-top: 0.2rem;
+                    "
+                    >⚠ Course name is required</span
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="courseCode"
+                    >Course Code <span class="required-mark">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="courseCode"
+                    name="courseCode"
+                    placeholder="e.g. CS-301"
+                    required
+                  />
+
+                  <span
+                    class="field-error"
+                    style="
+                      display: none;
+                      color: var(--danger);
+                      font-size: 0.8rem;
+                      margin-top: 0.2rem;
+                    "
+                    >⚠ Course code is required</span
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="department"
+                    >Department <span class="required-mark">*</span></label
+                  >
+                  <select id="department" name="department" required>
+                    <option value="" disabled selected>
+                      Select department…
+                    </option>
+                    <option value="CS">Computer Science</option>
+                    <option value="MATH">Mathematics</option>
+                    <option value="ENG">Engineering</option>
+                    <option value="PHYS">Physics</option>
+                    <option value="LIT">Literature</option>
+                    <option value="BIO">Biology</option>
+                    <option value="CHEM">Chemistry</option>
+                    <option value="ECON">Economics</option>
+                    <option value="HIST">History</option>
+                    <option value="PHIL">Philosophy</option>
+                    <option value="OTHER">Other</option>
+                  </select>
+                  <span
+                    class="field-error"
+                    style="
+                      display: none;
+                      color: var(--danger);
+                      font-size: 0.8rem;
+                      margin-top: 0.2rem;
+                    "
+                    >⚠ Please select a department</span
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="instructor"
+                    >Instructor Name <span class="required-mark">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="instructor"
+                    name="instructor"
+                    placeholder="e.g. Dr. Sarah Mitchell"
+                    required
+                  />
+
+                  <span
+                    class="field-error"
+                    style="
+                      display: none;
+                      color: var(--danger);
+                      font-size: 0.8rem;
+                      margin-top: 0.2rem;
+                    "
+                    >⚠ Instructor name is required</span
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="creditHours"
+                    >Credit Hours <span class="required-mark">*</span></label
+                  >
+                  <input
+                    type="number"
+                    id="creditHours"
+                    name="creditHours"
+                    placeholder="e.g. 3"
+                    min="1"
+                    max="6"
+                    required
+                  />
+
+                  <span
+                    class="field-error"
+                    style="
+                      display: none;
+                      color: var(--danger);
+                      font-size: 0.8rem;
+                      margin-top: 0.2rem;
+                    "
+                    >⚠ Enter a valid credit value (1–6)</span
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="semester"
+                    >Semester <span class="required-mark">*</span></label
+                  >
+                  <select id="semester" name="semester" required>
+                    <option value="" disabled selected>Select semester…</option>
+                    <option value="Spring 2025">Spring 2025</option>
+                    <option value="Summer 2025">Summer 2025</option>
+                    <option value="Fall 2025">Fall 2025</option>
+                    <option value="Spring 2026">Spring 2026</option>
+                  </select>
+                  <span
+                    class="field-error"
+                    style="
+                      display: none;
+                      color: var(--danger);
+                      font-size: 0.8rem;
+                      margin-top: 0.2rem;
+                    "
+                    >⚠ Please select a semester</span
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="schedule">Class Schedule</label>
+                  <input
+                    type="text"
+                    id="schedule"
+                    name="schedule"
+                    placeholder="e.g. MWF 9:00–10:00am"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="room">Room / Location</label>
+                  <input
+                    type="text"
+                    id="room"
+                    name="room"
+                    placeholder="e.g. Science Hall 204"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="status">Enrollment Status</label>
+                  <select id="status" name="status">
+                    <option value="Active">Active</option>
+                    <option value="Pending">Pending / Waitlisted</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Dropped">Dropped</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="grade">Current Grade</label>
+                  <select id="grade" name="grade">
+                    <option value="—">Not yet graded</option>
+                    <option value="A+">A+</option>
+                    <option value="A">A</option>
+                    <option value="A−">A−</option>
+                    <option value="B+">B+</option>
+                    <option value="B">B</option>
+                    <option value="B−">B−</option>
+                    <option value="C+">C+</option>
+                    <option value="C">C</option>
+                    <option value="C−">C−</option>
+                    <option value="D">D</option>
+                    <option value="F">F</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="reset" class="btn-reset" id="resetBtn">
+                  Clear Form
+                </button>
+                <button type="submit" class="btn-submit">✓ Save Course</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="../index.html" class="logo" style="margin-bottom: 0.8rem">
+              <span class="logo-text">Course<span>Vault</span></span>
+            </a>
+            <p>
+              A personal academic organizer designed to help students stay on
+              top of their coursework and academic goals.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Pages</h4>
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="my-courses.html">My Courses</a></li>
+              <li><a href="add-course.html">Add Course</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

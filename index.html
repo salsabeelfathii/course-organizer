@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CourseVault — Personal Course Organizer</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>"
+    />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <span class="logo-text">Course<span>Vault</span></span>
+        </a>
+        <nav>
+          <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+          </button>
+          <ul id="nav-menu">
+            <li><a href="index.html" class="active">🏠 Home</a></li>
+            <li><a href="pages/my-courses.html">📚 My Courses</a></li>
+            <li>
+              <a href="pages/add-course.html" class="cta">➕ Add Course</a>
+            </li>
+            <li><a href="pages/contact.html">✉️ Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <!-- HERO -->
+      <div class="page-hero">
+        <span class="eyebrow fade-up">Your Academic Command Center</span>
+        <h1 class="fade-up delay-1">
+          Organize your courses.<br /><em>Own your semester.</em>
+        </h1>
+        <p class="fade-up delay-2">
+          Track credits, instructors, deadlines and grades — all in one
+          beautifully organized space built for serious students.
+        </p>
+        <div class="hero-cta fade-up delay-3">
+          <a href="pages/add-course.html" class="btn btn-primary"
+            >➕ Add a Course</a
+          >
+          <a href="pages/my-courses.html" class="btn btn-outline"
+            >View All Courses →</a
+          >
+        </div>
+      </div>
+
+      <!-- STATS -->
+      <section>
+        <div class="stats-grid">
+          <div class="stat-card fade-up delay-1">
+            <span class="stat-icon">📖</span>
+            <div class="stat-number">7</div>
+            <div class="stat-label">Enrolled Courses</div>
+          </div>
+          <div class="stat-card fade-up delay-2">
+            <span class="stat-icon">⚡</span>
+            <div class="stat-number">21</div>
+            <div class="stat-label">Credit Hours</div>
+          </div>
+          <div class="stat-card fade-up delay-3">
+            <span class="stat-icon">✅</span>
+            <div class="stat-number">3</div>
+            <div class="stat-label">Completed</div>
+          </div>
+          <div class="stat-card fade-up delay-4">
+            <span class="stat-icon">🏆</span>
+            <div class="stat-number">3.8</div>
+            <div class="stat-label">Current GPA</div>
+          </div>
+        </div>
+
+        <!-- GPA widget -->
+        <div
+          class="gpa-widget fade-up delay-2"
+          style="max-width: 320px; margin: 0 auto 3rem"
+        >
+          <div class="gpa-ring">
+            <svg viewBox="0 0 120 120" width="120" height="120">
+              <circle class="track" cx="60" cy="60" r="50" />
+              <circle class="fill" cx="60" cy="60" r="50" />
+            </svg>
+            <div class="gpa-value">
+              <span class="gpa-number">3.8</span>
+              <span class="gpa-label">GPA</span>
+            </div>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted)">
+            Spring 2025 Semester Progress
+          </p>
+          <div class="progress-track" style="margin-top: 1rem">
+            <div class="progress-fill" style="width: 62%"></div>
+          </div>
+          <p
+            style="
+              font-size: 0.78rem;
+              color: var(--text-muted);
+              margin-top: 0.5rem;
+            "
+          >
+            62% of semester complete
+          </p>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section>
+        <span class="eyebrow">Why CourseVault?</span>
+        <h2 class="section-title">Everything you need, nothing you don't</h2>
+        <div class="divider"></div>
+        <div class="features-grid">
+          <div class="feature-card fade-up delay-1">
+            <div class="feature-icon">📋</div>
+            <h3>Smart Course Table</h3>
+            <p>
+              View all your enrolled courses at a glance — sortable, filterable,
+              and always up to date. No more digging through syllabi.
+            </p>
+          </div>
+          <div class="feature-card fade-up delay-2">
+            <div class="feature-icon">✏️</div>
+            <h3>Quick Add Form</h3>
+            <p>
+              Add a new course in seconds with our clean, validated form.
+              Capture everything from credit hours to instructor office hours.
+            </p>
+          </div>
+          <div class="feature-card fade-up delay-3">
+            <div class="feature-icon">📊</div>
+            <h3>GPA Tracking</h3>
+            <p>
+              Watch your GPA update in real time as you log grades. Visual
+              indicators keep you aware of where you stand each semester.
+            </p>
+          </div>
+          <div class="feature-card fade-up delay-2">
+            <div class="feature-icon">🔔</div>
+            <h3>Status Badges</h3>
+            <p>
+              Color-coded status tags — Active, Completed, Pending, Dropped —
+              keep your course list crystal clear at a glance.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="index.html" class="logo" style="margin-bottom: 0.8rem">
+              <span class="logo-text">Course<span>Vault</span></span>
+            </a>
+            <p>
+              A personal academic organizer designed to help students stay on
+              top of their coursework and academic goals.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Pages</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="pages/my-courses.html">My Courses</a></li>
+              <li><a href="pages/add-course.html">Add Course</a></li>
+              <li><a href="pages/contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="pages/my-courses.html">Course Table</a></li>
+              <li><a href="pages/add-course.html">New Entry</a></li>
+              <li><a href="pages/contact.html">Get Help</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Hamburger toggle
+      document.getElementById("hamburger").addEventListener("click", () => {
+        document.getElementById("nav-menu").classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>
